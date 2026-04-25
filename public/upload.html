@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upload academic resources to share with the community — Acudhb.">
+    <title>Upload Resource — Acudhb</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="navbar" id="navbar"></header>
+
+    <main class="main-content">
+        <div class="container container-sm">
+            <div class="page-header text-center">
+                <h1 class="page-title">Upload Resource</h1>
+                <p class="page-subtitle">Share your knowledge with fellow students</p>
+            </div>
+
+            <div class="card" style="padding: 2rem;">
+                <form id="uploadForm" onsubmit="handleUpload(event)">
+                    <div class="form-group">
+                        <label class="form-label">Title *</label>
+                        <input type="text" class="form-input" id="uploadTitle" 
+                            placeholder="e.g. Data Structures - Complete Notes" required maxlength="200">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description *</label>
+                        <textarea class="form-textarea" id="uploadDescription" rows="4"
+                            placeholder="Describe the content, what topics are covered, and who it's useful for..." 
+                            required maxlength="2000"></textarea>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Subject *</label>
+                            <select class="form-select" id="uploadSubject" required>
+                                <option value="" disabled selected>Select Subject</option>
+                                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Electronics & Communication">Electronics & Communication</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                <option value="Engineering Mathematics">Engineering Mathematics</option>
+                                <option value="Engineering Physics">Engineering Physics</option>
+                                <option value="Engineering Chemistry">Engineering Chemistry</option>
+                                <option value="Engineering Mechanics">Engineering Mechanics</option>
+                                <option value="Environmental Studies">Environmental Studies</option>
+                                <option value="Basic Electrical & Electronics">Basic Electrical & Electronics</option>
+                                <option value="Engineering Graphics">Engineering Graphics</option>
+                                <option value="Other Engineering">Other Engineering</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Topic</label>
+                            <input type="text" class="form-input" id="uploadTopic" 
+                                placeholder="e.g. Binary Trees, Thermodynamics">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Visibility *</label>
+                        <select class="form-select" id="uploadVisibility" required>
+                            <option value="public">Public (Share with community)</option>
+                            <option value="private">Private (Only for me to study & get AI summary)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Upload File *</label>
+                        <div class="form-file">
+                            <input type="file" id="uploadFile" required 
+                                accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.txt,.zip,.mp4,.webm"
+                                onchange="updateFileLabel(this)">
+                            <div class="form-file-label" id="fileLabelArea">
+                                <span class="upload-icon">📁</span>
+                                <span class="upload-text">Click to select a file or drag it here</span>
+                                <span class="upload-hint">PDF, DOC, PPT, Images, Videos (Max 50MB)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full btn-lg" id="uploadBtn">
+                        📤 Upload Resource
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/upload.js"></script>
+</body>
+</html>
